@@ -3,7 +3,7 @@ title:               Pensive
 tagline:             'A thoughtful blog'
 description:         'A place for thoughtful writing and reflection.'
 url:                 https://productandcoffee.github.io
-baseurl:             '/blog'
+baseurl:             ''
 paginate:            5
 permalink:           pretty
 
