@@ -3,22 +3,16 @@ layout: page
 title: About
 ---
 
-<p class="message">
-  Welcome to Pensive - a place for thoughtful writing and reflection.
-</p>
+Aspiring founder, product leader and builder - tugging at GTM funnels occasionally. 
 
-This is a personal blog built with Jekyll using the Lanyon theme. Here you'll find thoughts, ideas, and reflections on various topics.
+I like building things that people pay for. I turn ambiguity into a plan, a plan into a product, and a product into growth. My comfort zone is early-stage chaos with a bias for clarity: make the call, ship the version, watch the data, talk to users, repeat.
 
-Feel free to explore and reach out if you'd like to connect!
+GTM is part of the job. I’m interested in the full chain—from positioning and onboarding to activation, retention, expansion, and revenue. Product is the engine; GTM is the transmission.
 
-## Setup
+Here you’ll find:
+* Notes from building: discovery, MVPs, execution, iteration
+* GTM thinking: messaging, launches, pricing, and adoption
+* Templates: PRDs, scorecards, dashboards, workflows
+* AI-native building: automations, agents, and guardrails
 
-Some fun facts about the setup of this project include:
-
-* Built for [Jekyll](https://jekyllrb.com)
-* Developed on GitHub and hosted for free on [GitHub Pages](https://pages.github.com)
-* Coded with [Atom](https://atom.io)
-
-Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/poole/issues/new) or [ask me on Twitter](https://twitter.com/mdo).
-
-Thanks for reading!
+Build fast. Learn faster.
