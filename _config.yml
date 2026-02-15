@@ -1,7 +1,7 @@
 # Setup
 title:               Venkat Iyappan
 tagline:             "Product, Coffee and GTM"
-description:         'A place for thoughtful writing and reflection.'
+description:         "Product, Coffee and GTM"
 url:                 https://productandcoffee.github.io
 baseurl:             '/blog'
 paginate:            5
