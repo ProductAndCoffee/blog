@@ -1,4 +1,9 @@
-<<<<<<< HEAD
+# Pensive Blog
+
+This blog is built using the **Lanyon** Jekyll theme.
+
+---
+
 # Lanyon
 
 Lanyon is an unassuming [Jekyll](http://jekyllrb.com) theme that places content first by tucking away navigation in a hidden drawer. It's based on [Poole](http://getpoole.com), the Jekyll butler.
@@ -133,6 +138,3 @@ Lanyon has two branches, but only one is used for active development.
 Open sourced under the [MIT license](LICENSE.md).
 
 <3
-=======
-# blog
->>>>>>> 2af94097c07afa7b396712a476c0c49ff62cea6b
