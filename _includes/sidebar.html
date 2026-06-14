@@ -26,6 +26,7 @@
     {% endif %}
     {% endfor %}
 
+    <a class="sidebar-nav-item{% if page.url == '/portfolio/' %} active{% endif %}" href="{{ '/portfolio/' | relative_url }}">Portfolio</a>
     <a class="sidebar-nav-item" href="https://github.com/ProductAndCoffee" target="_blank">My Github</a>
     <span class="sidebar-nav-item">Currently v{{ site.version }}</span>
   </nav>

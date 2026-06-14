@@ -1,32 +1,21 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
+  {% include head.html %}
+  <body class="portfolio-page">
+    <div class="portfolio-container">
+      {% include site-header.html %}
+      
+      <main>
+        {{ content }}
+      </main>
 
-{% include head.html %}
-
-<body class="theme-base-0f">
-
-  {% include sidebar.html %}
-
-  <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
-         content to avoid any CSS collisions with our real content. -->
-  <div class="wrap">
-    <div class="masthead">
-      <div class="container">
-        <h3 class="masthead-title">
-          <a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
-          <small>{{ site.tagline }}</small>
-        </h3>
-      </div>
+      <footer class="portfolio-footer">
+        <div class="portfolio-footer-links">
+          <a href="https://linkedin.com/in/productandcoffee">LinkedIn</a>
+          <a href="https://github.com/ProductAndCoffee">GitHub</a>
+        </div>
+      </footer>
     </div>
-
-    <div class="container content">
-      {{ content }}
-    </div>
-  </div>
-
-  <label for="sidebar-checkbox" class="sidebar-toggle"></label>
-
-  <script src='{{ site.baseurl }}/public/js/script.js'></script>
-</body>
-
+    <script src="{{ '/public/js/portfolio.js' | relative_url }}"></script>
+  </body>
 </html>

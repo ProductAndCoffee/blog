@@ -1,0 +1,83 @@
+{% assign project = include.project %}
+{% assign variant = include.variant | default: "standard" %}
+{% assign preview = project.preview | default: "default" %}
+{% assign evidence = project.evidence %}
+{% assign primary_url = project.case_study_url | default: project.demo_url %}
+{% if primary_url == nil and project.visibility == "public" %}
+  {% assign primary_url = project.repository_url %}
+{% endif %}
+{% assign primary_label = "Open project" %}
+{% if project.case_study_url %}
+  {% assign primary_label = "View case study" %}
+{% elsif project.demo_url %}
+  {% assign primary_label = "Open demo" %}
+{% elsif project.repository_url and project.visibility == "public" %}
+  {% assign primary_label = "Open GitHub" %}
+{% endif %}
+
+{% if variant == "supporting" %}
+<article class="portfolio-support-card">
+  <div>
+    <p class="portfolio-case-category">{{ project.category }}</p>
+    <h3>{{ project.title }}</h3>
+    <p>{{ project.one_liner }}</p>
+  </div>
+  <div>
+    <div class="portfolio-tags" aria-label="{{ project.title }} proof signals">
+      {% for tag in project.tags %}
+      <span>{{ tag }}</span>
+      {% endfor %}
+    </div>
+    <div class="portfolio-card-actions">
+      {% if primary_url %}
+      <a href="{{ primary_url }}" target="_blank" rel="noopener">{{ primary_label }}</a>
+      {% elsif project.visibility == "private" %}
+      <span>Private repo</span>
+      {% else %}
+      <span>Summary only</span>
+      {% endif %}
+    </div>
+  </div>
+</article>
+{% else %}
+<article class="portfolio-case{% if variant == "featured" %} portfolio-case-featured{% endif %}">
+  <div class="portfolio-case-preview portfolio-preview-{{ preview }}" aria-hidden="true">
+    <div class="portfolio-preview-panel">
+      <div class="portfolio-preview-header"></div>
+      <div class="portfolio-preview-metric-row">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="portfolio-preview-line wide"></div>
+      <div class="portfolio-preview-line"></div>
+      <div class="portfolio-preview-row">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+  <div class="portfolio-case-body">
+    <p class="portfolio-case-category">{{ project.category }}</p>
+    <h3>{{ project.title }}</h3>
+    <p class="portfolio-case-thesis">{{ project.one_liner }}</p>
+    <div class="portfolio-tags" aria-label="{{ project.title }} proof signals">
+      {% for tag in project.tags %}
+      <span>{{ tag }}</span>
+      {% endfor %}
+    </div>
+    <dl class="portfolio-evidence">
+      {% if evidence.product %}<div><dt>Product</dt><dd>{{ evidence.product }}</dd></div>{% endif %}
+      {% if evidence.design %}<div><dt>Design</dt><dd>{{ evidence.design }}</dd></div>{% endif %}
+      {% if evidence.technical %}<div><dt>Technical</dt><dd>{{ evidence.technical }}</dd></div>{% endif %}
+      {% if evidence.ai %}<div><dt>AI leverage</dt><dd>{{ evidence.ai }}</dd></div>{% endif %}
+    </dl>
+    <div class="portfolio-card-actions">
+      {% if primary_url %}
+      <a href="{{ primary_url }}" target="_blank" rel="noopener">{{ primary_label }}</a>
+      {% elsif project.visibility == "private" %}
+      <span>Private repo</span>
+      {% else %}
+      <span>Summary only</span>
+      {% endif %}
+    </div>
+  </div>
+</article>
+{% endif %}

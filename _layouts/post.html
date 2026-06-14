@@ -2,26 +2,103 @@
 layout: default
 ---
 
-<div class="post">
-  <h1 class="post-title">{{ page.title }}</h1>
-  <span class="post-date">{{ page.date | date_to_string }}</span>
-  {{ content }}
+<div class="article-detail-layout">
+  <!-- Left Rail: Metadata & TOC -->
+  <aside class="article-left-rail">
+    <div class="post-date" style="margin-bottom: 8px;">{{ page.date | date: "%b %d, %Y" }}</div>
+    <div class="portfolio-card-category" style="color: var(--color-accent-terracotta); font-weight: 700; margin-bottom: 24px;">
+      {{ page.categories | first | default: "Writing" }}
+    </div>
+    <div class="article-divider-line"></div>
+    <div class="article-toc">
+      <div class="article-toc-title">CONTENTS</div>
+      <ul class="article-toc-list" id="article-toc-list">
+        <!-- Generated dynamically via JS -->
+      </ul>
+    </div>
+  </aside>
+
+  <!-- Center Column: Article reading area -->
+  <article class="article-reading-col">
+    <div class="portfolio-breadcrumb">Home / Writing / {{ page.title }}</div>
+    <h1 class="article-detail-title">{{ page.title }}</h1>
+    
+    {% if page.summary %}
+    <p class="article-detail-dek">{{ page.summary }}</p>
+    {% endif %}
+
+    <div class="article-divider-line"></div>
+    
+    <div class="post-content" id="article-body-content">
+      {{ content }}
+    </div>
+  </article>
+
+  <!-- Right Rail: Related articles / projects -->
+  <aside class="article-right-rail">
+    <div class="article-toc-title">NEXT</div>
+    <div class="article-sidebar-cards">
+      <!-- Card 1: Related post or Portfolio CMS link -->
+      <div class="article-sidebar-card">
+        <div class="portfolio-card-category" style="margin-bottom: 8px;">PROJECT</div>
+        <h4 class="portfolio-card-title" style="font-size: 18px; margin-bottom: 6px;">Portfolio CMS</h4>
+        <p class="portfolio-card-oneliner" style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 0;">
+          The content system that powers publishing, metadata, and search.
+        </p>
+      </div>
+
+      <!-- Card 2: Strategy portfolio link -->
+      <div class="article-sidebar-card">
+        <div class="portfolio-card-category" style="margin-bottom: 8px;">WORK</div>
+        <h4 class="portfolio-card-title" style="font-size: 18px; margin-bottom: 6px;">Strategy</h4>
+        <p class="portfolio-card-oneliner" style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 0;">
+          Selected cases in strategy translated into execution.
+        </p>
+      </div>
+    </div>
+  </aside>
 </div>
 
-{% if site.related_posts.size >= 1 %}
-<div class="related">
-  <h2>Related posts</h2>
-  <ul class="related-posts">
-    {% for post in site.related_posts limit:3 %}
-    <li>
-      <h3>
-        <a href="{{ post.url | relative_url }}">
-          {{ post.title }}
-          <small>{{ post.date | date_to_string }}</small>
-        </a>
-      </h3>
-    </li>
-    {% endfor %}
-  </ul>
-</div>
-{% endif %}
+<!-- Table of Contents Generator Script -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const content = document.getElementById('article-body-content');
+  const tocList = document.getElementById('article-toc-list');
+  
+  if (content && tocList) {
+    const headings = content.querySelectorAll('h2, h3');
+    
+    if (headings.length === 0) {
+      // Hide TOC header if no headings exist
+      const tocHeader = document.querySelector('.article-toc');
+      if (tocHeader) tocHeader.style.display = 'none';
+      return;
+    }
+    
+    headings.forEach((heading, index) => {
+      // Ensure heading has an ID
+      if (!heading.id) {
+        heading.id = 'heading-' + index;
+      }
+      
+      const li = document.createElement('li');
+      li.className = 'article-toc-item';
+      
+      // Indent h3 elements slightly
+      if (heading.tagName.toLowerCase() === 'h3') {
+        li.style.paddingLeft = '12px';
+      }
+      
+      // Format numbering prefix style like §01
+      const sectionNum = String(index + 1).padStart(2, '0');
+      li.textContent = `§${sectionNum} ${heading.textContent}`;
+      
+      li.addEventListener('click', () => {
+        heading.scrollIntoView({ behavior: 'smooth' });
+      });
+      
+      tocList.appendChild(li);
+    });
+  }
+});
+</script>

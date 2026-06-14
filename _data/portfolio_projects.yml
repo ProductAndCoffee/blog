@@ -1,0 +1,158 @@
+- id: ai-gateway-tco-dashboard
+  title: AI Gateway TCO Dashboard
+  status: featured
+  rank: 10
+  category: Enterprise AI infrastructure
+  one_liner: An enterprise AI gateway simulator showing how semantic caching, routing policy, rate limits, and observability reduce LLM operating cost.
+  visibility: public
+  featured: true
+  include_on_portfolio: true
+  repository_url: https://github.com/ProductAndCoffee/ai-gateway-tco-dashboard
+  preview: gateway
+  tags:
+    - Semantic caching
+    - Model routing
+    - Rate limiting
+    - TCO dashboard
+  evidence:
+    product: Simulates a gateway layer for controlling LLM spend, policy, and operational risk.
+    design: Operator dashboard with overview metrics, live traffic, request details, and scenario controls.
+    technical: FastAPI gateway, FAISS vector cache, SQLite metadata, Next.js dashboard, and Docker Compose.
+    ai: Demonstrates AI infrastructure patterns for semantic reuse, routing policy, and cost observability.
+
+- id: gistify
+  title: Gistify
+  status: featured
+  rank: 20
+  category: AI browser workflow
+  one_liner: A Firefox extension that turns articles into structured AI summaries, Markdown notes, and organized bookmarks with user-controlled LLM keys.
+  visibility: public
+  featured: true
+  include_on_portfolio: true
+  repository_url: https://github.com/ProductAndCoffee/Gistify
+  preview: gistify
+  tags:
+    - Firefox extension
+    - BYOK
+    - Markdown export
+    - Auto-bookmarking
+  evidence:
+    product: Compresses article reading into capture, summary, bookmark, and note-taking workflow.
+    design: Lightweight extension flow with provider settings and a local download path.
+    technical: Browser extension architecture with configurable Gemini, Groq, and OpenAI providers.
+    ai: Uses LLMs for summaries, key insights, notable opinions, and highlights while keeping keys user-controlled.
+
+- id: pocketrag-2
+  title: PocketRAG 2.0
+  status: featured
+  rank: 30
+  category: AI-native technical product
+  one_liner: A local-first RAG workspace for asking grounded questions across organized PDF collections.
+  visibility: public
+  featured: true
+  include_on_portfolio: true
+  repository_url: https://github.com/ProductAndCoffee/PocketRAG-2.0
+  preview: rag
+  tags:
+    - Local RAG
+    - FastAPI
+    - ChromaDB
+    - React
+  evidence:
+    product: Folder-aware knowledge workflow for private document exploration.
+    technical: Provider flexibility across local Ollama and hosted OpenAI workflows.
+    ai: Direct proof of AI product fluency through retrieval, grounding, and UX framing.
+
+- id: vasara-moon-phase-calendar
+  title: Vasara
+  status: supporting
+  rank: 40
+  category: Mobile ritual product
+  one_liner: A daily Panchanga companion designed around trust, speed to value, and shareable ritual moments.
+  visibility: private
+  featured: false
+  include_on_portfolio: true
+  preview: vasara
+  tags:
+    - Android-first UX
+    - Design system
+    - Reference tests
+    - Growth loop
+  evidence:
+    product: Daily ritual loop with a focused Today surface and shareable moments.
+    design: Warm, culturally sensitive visual system without leaning on cliche.
+    technical: FastAPI, Expo, OpenAPI types, CI, and reference-date validation.
+    ai: Accelerated PRDs, architecture reviews, test planning, and implementation iteration.
+
+- id: stockout-predictor
+  title: stockout-predictor
+  status: supporting
+  rank: 50
+  category: Retail operations API
+  one_liner: A small API that estimates days to stockout from current inventory, supplier lead time, and recent sales velocity.
+  visibility: public
+  featured: false
+  include_on_portfolio: true
+  repository_url: https://github.com/ProductAndCoffee/stockout-predictor
+  preview: stockout
+  tags:
+    - FastAPI
+    - Supabase
+    - Inventory
+    - Forecasting
+  evidence:
+    product: Turns inventory, supplier lead time, and 30-day sales history into a replenishment risk signal.
+    technical: FastAPI endpoint backed by Supabase queries and pandas-based sales-rate calculation.
+    ai: Useful baseline operations project that can later support AI-assisted retail planning workflows.
+
+- id: nidhisha-taxplanner
+  title: Nidhisha / TaxPlanner
+  status: archive
+  rank: 90
+  category: Trust-heavy fintech system
+  one_liner: A privacy-first tax-planning product using deterministic rules to compare regimes and identify next-best declarations.
+  visibility: private
+  featured: false
+  include_on_portfolio: false
+
+- id: qbit-olympiad
+  title: Q-Bit Olympiad App
+  status: archive
+  rank: 100
+  category: Education product
+  one_liner: Student practice workflows, gamification, mobile readiness, runtime content updates, and SEO-led distribution.
+  visibility: private
+  featured: false
+  include_on_portfolio: false
+
+- id: pocketrag
+  title: PocketRAG
+  status: archive
+  rank: 110
+  category: Earlier RAG prototype
+  one_liner: Earlier local RAG prototype superseded by PocketRAG 2.0.
+  visibility: public
+  featured: false
+  include_on_portfolio: false
+  repository_url: https://github.com/ProductAndCoffee/PocketRAG
+
+- id: archive-url-addon
+  title: archive-url-addon
+  status: archive
+  rank: 120
+  category: Browser utility
+  one_liner: Small browser utility, kept out of the main portfolio narrative.
+  visibility: public
+  featured: false
+  include_on_portfolio: false
+  repository_url: https://github.com/ProductAndCoffee/archive-url-addon
+
+- id: vasara-app-stub
+  title: vasara-app-stub
+  status: archive
+  rank: 130
+  category: Archived app stub
+  one_liner: Archived early Vasara stub superseded by vasara-moon-phase-calendar.
+  visibility: private
+  featured: false
+  include_on_portfolio: false

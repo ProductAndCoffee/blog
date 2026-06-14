@@ -1,37 +1,76 @@
 ---
 layout: default
-title: Home
+title: Writing
 ---
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a href="{{ post.url | relative_url }}">
-        {{ post.title }}
-      </a>
-    </h1>
+<div class="writing-layout-container">
+  <div class="writing-main-col">
+    <div class="portfolio-breadcrumb">Home / Writing</div>
+    <h1 class="portfolio-title">Writing</h1>
+    <p class="portfolio-lede" style="margin-bottom: 48px;">Notes on product, technology, and operating judgment.</p>
+    
+    <!-- Filter pills -->
+    <div class="writing-filters">
+      <button class="writing-filter-pill active" data-filter="all">All</button>
+      <button class="writing-filter-pill" data-filter="product">Product</button>
+      <button class="writing-filter-pill" data-filter="ai">AI</button>
+      <button class="writing-filter-pill" data-filter="operating-notes">Operating Notes</button>
+      <button class="writing-filter-pill" data-filter="strategy">Strategy</button>
+    </div>
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
-
-    {{ post.content }}
+    <div class="posts" id="posts-container">
+      {% for post in site.posts %}
+      {% assign post_categories = post.categories | join: ' ' | downcase %}
+      {% assign post_tags = post.tags | join: ' ' | downcase %}
+      <article class="post-item" data-categories="{{ post_categories }} {{ post_tags }}">
+        <h2 class="post-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h2>
+        <span class="post-date">{{ post.date | date: "%b %d, %Y" }}</span>
+        <div class="post-content" style="font-size: 16px; margin-bottom: 16px;">
+          {{ post.summary | default: post.excerpt | strip_html | truncatewords: 35 }}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
   </div>
-  {% endfor %}
+
+  <div class="writing-sidebar-col">
+    <div class="writing-sidebar-title">EDITORIAL SYSTEM</div>
+    <p class="writing-sidebar-text">
+      This direction keeps the writing index quiet: high-contrast titles, short excerpts, mono dates, and filters that do not fight the content.
+    </p>
+    <ul class="writing-sidebar-list">
+      <li>• RSS feed</li>
+      <li>• Topic filters</li>
+      <li>• Search indexed by Pagefind</li>
+      <li>• JSON-LD article schema</li>
+    </ul>
+  </div>
 </div>
 
-<div class="pagination">
-  {% if paginator.next_page %}
-  <a class="pagination-item older" href="{{ paginator.next_page_path | relative_url }}">Older</a>
-  {% else %}
-  <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-  {% if paginator.page == 2 %}
-  <a class="pagination-item newer" href="{{ '/' | relative_url }}">Newer</a>
-  {% else %}
-  <a class="pagination-item newer" href="{{ paginator.previous_page_path | relative_url }}">Newer</a>
-  {% endif %}
-  {% else %}
-  <span class="pagination-item newer">Newer</span>
-  {% endif %}
-</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const pills = document.querySelectorAll('.writing-filter-pill');
+  const posts = document.querySelectorAll('.post-item');
+
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      // Toggle active class
+      pills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+
+      const filter = pill.getAttribute('data-filter');
+
+      posts.forEach(post => {
+        const categories = post.getAttribute('data-categories');
+        if (filter === 'all' || categories.includes(filter)) {
+          post.style.display = 'block';
+        } else {
+          post.style.display = 'none';
+        }
+      });
+    });
+  });
+});
+</script>
