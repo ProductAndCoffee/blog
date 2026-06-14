@@ -63,12 +63,11 @@ body.portfolio-page {
 
 /* --- Header / Navigation --- */
 .portfolio-header {
-  height: 78px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--color-divider);
-  padding: 24px 0;
+  padding: 0;
   position: relative;
 }
 
@@ -575,7 +574,7 @@ body.dark-theme .portfolio-theme-toggle-knob {
 }
 
 .header-logo-img {
-  height: 144px;
+  height: 72px;
   width: auto;
   display: block;
 }
