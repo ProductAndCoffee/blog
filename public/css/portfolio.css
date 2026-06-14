@@ -574,6 +574,12 @@ body.dark-theme .portfolio-theme-toggle-knob {
   text-decoration: none;
 }
 
+.header-logo-img {
+  height: 144px;
+  width: auto;
+  display: block;
+}
+
 .portfolio-mobile-nav a.active {
   color: var(--color-accent-terracotta);
   font-weight: 700;
