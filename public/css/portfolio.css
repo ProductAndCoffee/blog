@@ -56,9 +56,9 @@ body.portfolio-page {
 }
 
 .portfolio-container {
-  max-width: 1440px;
+  max-width: 1248px;
   margin: 0 auto;
-  padding: 0 96px;
+  padding: 0 40px;
 }
 
 /* --- Header / Navigation --- */
@@ -563,6 +563,14 @@ body.dark-theme .portfolio-theme-toggle-knob {
   display: flex;
   flex-direction: column;
   gap: 24px;
+}
+
+.portfolio-nav a {
+  font-family: var(--font-nav);
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--color-text-primary);
+  text-decoration: none;
 }
 
 .portfolio-mobile-nav a {
