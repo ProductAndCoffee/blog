@@ -10,7 +10,6 @@
   --color-text-secondary: #555555;
   --color-text-muted: #6d6d6d;
   --color-accent: #ff3301;
-  --color-accent-terracotta: #b34e2e;
 
   /* Font mappings */
   --font-heading: 'Domine', Georgia, serif;
@@ -442,7 +441,7 @@ body.dark-theme .portfolio-theme-toggle-knob {
   font-family: var(--font-nav);
   font-weight: 600;
   font-size: 13px;
-  color: var(--color-accent-terracotta);
+  color: var(--color-text-primary);
   text-decoration: none;
   transition: opacity 0.2s ease;
 }
@@ -566,7 +565,7 @@ body.dark-theme .portfolio-theme-toggle-knob {
 }
 
 .portfolio-mobile-nav a.active {
-  color: var(--color-accent-terracotta);
+  color: var(--color-text-primary);
   font-weight: 700;
 }
 
@@ -687,7 +686,7 @@ body.dark-theme .portfolio-theme-toggle-knob {
 }
 
 .post-title a:hover {
-  color: var(--color-accent-terracotta);
+  text-decoration: underline;
 }
 
 .post-date {
@@ -809,7 +808,7 @@ body.dark-theme .portfolio-theme-toggle-knob {
 }
 
 .article-toc-item:hover {
-  color: var(--color-accent-terracotta);
+  text-decoration: underline;
 }
 
 .article-sidebar-cards {
