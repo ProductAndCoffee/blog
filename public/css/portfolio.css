@@ -93,12 +93,10 @@ body.portfolio-page {
 
 .portfolio-nav a {
   font-family: var(--font-nav);
-  font-weight: 500;
-  font-size: 14px;
   color: var(--color-text-muted);
   text-decoration: none;
-  position: relative;
-  padding-bottom: 4px;
+  font-size: 0.95rem;
+  font-weight: 500;
   transition: color 0.2s ease;
 }
 
