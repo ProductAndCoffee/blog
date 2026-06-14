@@ -42,7 +42,7 @@
     technical: Browser extension architecture with configurable Gemini, Groq, and OpenAI providers.
     ai: Uses LLMs for summaries, key insights, notable opinions, and highlights while keeping keys user-controlled.
 
-- id: pocketrag-2
+- id: pocketrag-2.0
   title: PocketRAG 2.0
   status: featured
   rank: 30
